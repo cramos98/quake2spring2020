@@ -606,12 +606,36 @@ but is called after each death and level change in deathmatch
 */
 void InitClientPersistant (gclient_t *client)
 {
-	gitem_t		*item;
+	gitem_t		*item, *item2, *item3, *item4, *item5, *item6, *item7;
 
 	memset (&client->pers, 0, sizeof(client->pers));
 
-	item = FindItem("Blaster");
+	item = FindItem("Cerberus");
 	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item2 = FindItem("Dueling Griffon");
+	client->pers.selected_item = ITEM_INDEX(item2);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item3 = FindItem("Blast Machinegun");
+	client->pers.selected_item = ITEM_INDEX(item3);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item4 = FindItem("Velvet Hydra");
+	client->pers.selected_item = ITEM_INDEX(item4);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item5 = FindItem("Shotgun");
+	client->pers.selected_item = ITEM_INDEX(item5);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item6 = FindItem("Ultima Weapon");
+	client->pers.selected_item = ITEM_INDEX(item6);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item7 = FindItem("Death Penalty");
+	client->pers.selected_item = ITEM_INDEX(item7);
 	client->pers.inventory[client->pers.selected_item] = 1;
 
 	client->pers.weapon = item;
@@ -1184,7 +1208,7 @@ void PutClientInServer (edict_t *ent)
 	VectorCopy (maxs, ent->maxs);
 	VectorClear (ent->velocity);
 
-	// clear playerstate values
+	// clear playerState values
 	memset (&ent->client->ps, 0, sizeof(client->ps));
 
 	client->ps.pmove.origin[0] = spawn_origin[0]*8;
@@ -1362,7 +1386,7 @@ The game can override any of the settings in place
 void ClientUserinfoChanged (edict_t *ent, char *userinfo)
 {
 	char	*s;
-	int		playernum;
+	int		clientNum;
 
 	// check for malformed or illegal info strings
 	if (!Info_Validate(userinfo))
@@ -1385,10 +1409,10 @@ void ClientUserinfoChanged (edict_t *ent, char *userinfo)
 	// set skin
 	s = Info_ValueForKey (userinfo, "skin");
 
-	playernum = ent-g_edicts-1;
+	clientNum = ent-g_edicts-1;
 
 	// combine name and skin into a configstring
-	gi.configstring (CS_PLAYERSKINS+playernum, va("%s\\%s", ent->client->pers.netname, s) );
+	gi.configstring (CS_PLAYERSKINS+clientNum, va("%s\\%s", ent->client->pers.netname, s) );
 
 	// fov
 	if (deathmatch->value && ((int)dmflags->value & DF_FIXED_FOV))
@@ -1503,7 +1527,7 @@ Will not be called between levels.
 */
 void ClientDisconnect (edict_t *ent)
 {
-	int		playernum;
+	int		clientNum;
 
 	if (!ent->client)
 		return;
@@ -1523,8 +1547,8 @@ void ClientDisconnect (edict_t *ent)
 	ent->classname = "disconnected";
 	ent->client->pers.connected = false;
 
-	playernum = ent-g_edicts-1;
-	gi.configstring (CS_PLAYERSKINS+playernum, "");
+	clientNum = ent-g_edicts-1;
+	gi.configstring (CS_PLAYERSKINS+clientNum, "");
 }
 
 

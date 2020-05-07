@@ -34,7 +34,7 @@ typedef struct
 	vec3_t		velocity;		// full float precision
 
 	vec3_t		forward, right, up;
-	float		frametime;
+	float		FRAMETIME;
 
 
 	csurface_t	*groundsurface;
@@ -128,7 +128,7 @@ void PM_StepSlideMove_ (void)
 	VectorCopy (pml.velocity, primal_velocity);
 	numplanes = 0;
 	
-	time_left = pml.frametime;
+	time_left = pml.FRAMETIME;
 
 	for (bumpcount=0 ; bumpcount<numbumps ; bumpcount++)
 	{
@@ -366,12 +366,12 @@ void PM_Friction (void)
 	{
 		friction = pm_friction;
 		control = speed < pm_stopspeed ? pm_stopspeed : speed;
-		drop += control*friction*pml.frametime;
+		drop += control*friction*pml.FRAMETIME;
 	}
 
 // apply water friction
 	if (pm->waterlevel && !pml.ladder)
-		drop += speed*pm_waterfriction*pm->waterlevel*pml.frametime;
+		drop += speed*pm_waterfriction*pm->waterlevel*pml.FRAMETIME;
 
 // scale the velocity
 	newspeed = speed - drop;
@@ -403,7 +403,7 @@ void PM_Accelerate (vec3_t wishdir, float wishspeed, float accel)
 	addspeed = wishspeed - currentspeed;
 	if (addspeed <= 0)
 		return;
-	accelspeed = accel*pml.frametime*wishspeed;
+	accelspeed = accel*pml.FRAMETIME*wishspeed;
 	if (accelspeed > addspeed)
 		accelspeed = addspeed;
 	
@@ -422,7 +422,7 @@ void PM_AirAccelerate (vec3_t wishdir, float wishspeed, float accel)
 	addspeed = wishspd - currentspeed;
 	if (addspeed <= 0)
 		return;
-	accelspeed = accel * wishspeed * pml.frametime;
+	accelspeed = accel * wishspeed * pml.FRAMETIME;
 	if (accelspeed > addspeed)
 		accelspeed = addspeed;
 	
@@ -619,13 +619,13 @@ void PM_AirMove (void)
 		{
 			if (pml.velocity[2] > 0)
 			{
-				pml.velocity[2] -= pm->s.gravity * pml.frametime;
+				pml.velocity[2] -= pm->s.gravity * pml.FRAMETIME;
 				if (pml.velocity[2] < 0)
 					pml.velocity[2]  = 0;
 			}
 			else
 			{
-				pml.velocity[2] += pm->s.gravity * pml.frametime;
+				pml.velocity[2] += pm->s.gravity * pml.FRAMETIME;
 				if (pml.velocity[2] > 0)
 					pml.velocity[2]  = 0;
 			}
@@ -642,7 +642,7 @@ void PM_AirMove (void)
 		if(pm->s.gravity > 0)
 			pml.velocity[2] = 0;
 		else
-			pml.velocity[2] -= pm->s.gravity * pml.frametime;
+			pml.velocity[2] -= pm->s.gravity * pml.FRAMETIME;
 // PGM
 
 		if (!pml.velocity[0] && !pml.velocity[1])
@@ -656,7 +656,7 @@ void PM_AirMove (void)
 		else
 			PM_Accelerate (wishdir, wishspeed, 1);
 		// add gravity
-		pml.velocity[2] -= pm->s.gravity * pml.frametime;
+		pml.velocity[2] -= pm->s.gravity * pml.FRAMETIME;
 		PM_StepSlideMove ();
 	}
 }
@@ -906,7 +906,7 @@ void PM_FlyMove (qboolean doclip)
 
 		friction = pm_friction*1.5;	// extra friction
 		control = speed < pm_stopspeed ? pm_stopspeed : speed;
-		drop += control*friction*pml.frametime;
+		drop += control*friction*pml.FRAMETIME;
 
 		// scale the velocity
 		newspeed = speed - drop;
@@ -945,7 +945,7 @@ void PM_FlyMove (qboolean doclip)
 	addspeed = wishspeed - currentspeed;
 	if (addspeed <= 0)
 		return;
-	accelspeed = pm_accelerate*pml.frametime*wishspeed;
+	accelspeed = pm_accelerate*pml.FRAMETIME*wishspeed;
 	if (accelspeed > addspeed)
 		accelspeed = addspeed;
 	
@@ -954,14 +954,14 @@ void PM_FlyMove (qboolean doclip)
 
 	if (doclip) {
 		for (i=0 ; i<3 ; i++)
-			end[i] = pml.origin[i] + pml.frametime * pml.velocity[i];
+			end[i] = pml.origin[i] + pml.FRAMETIME * pml.velocity[i];
 
 		trace = pm->trace (pml.origin, pm->mins, pm->maxs, end);
 
 		VectorCopy (trace.endpos, pml.origin);
 	} else {
 		// move
-		VectorMA (pml.origin, pml.frametime, pml.velocity, pml.origin);
+		VectorMA (pml.origin, pml.FRAMETIME, pml.velocity, pml.origin);
 	}
 }
 
@@ -1264,7 +1264,7 @@ void Pmove (pmove_t *pmove)
 	// save old org in case we get stuck
 	VectorCopy (pm->s.origin, pml.previous_origin);
 
-	pml.frametime = pm->cmd.msec * 0.001;
+	pml.FRAMETIME = pm->cmd.msec * 0.001;
 
 	PM_ClampAngles ();
 
@@ -1321,7 +1321,7 @@ void Pmove (pmove_t *pmove)
 	}
 	else if (pm->s.pm_flags & PMF_TIME_WATERJUMP)
 	{	// waterjump has no control, but falls
-		pml.velocity[2] -= pm->s.gravity * pml.frametime;
+		pml.velocity[2] -= pm->s.gravity * pml.FRAMETIME;
 		if (pml.velocity[2] < 0)
 		{	// cancel as soon as we are falling down again
 			pm->s.pm_flags &= ~(PMF_TIME_WATERJUMP | PMF_TIME_LAND | PMF_TIME_TELEPORT);

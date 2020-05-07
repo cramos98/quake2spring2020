@@ -779,7 +779,7 @@ void IN_JoyMove (usercmd_t *cmd)
 		speed = 2;
 	else
 		speed = 1;
-	aspeed = speed * cls.frametime;
+	aspeed = speed * cls.FRAMETIME;
 
 	// loop through the axes
 	for (i = 0; i < JOY_MAX_AXES; i++)

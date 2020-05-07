@@ -205,7 +205,7 @@ typedef struct
 
 	int			framecount;
 	int			realtime;			// always increasing, no clamping, etc
-	float		frametime;			// seconds since last frame
+	float		FRAMETIME;			// seconds since last frame
 
 // screen rendering information
 	float		disable_screen;		// showing loading plaque between levels

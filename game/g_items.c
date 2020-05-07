@@ -24,16 +24,18 @@ qboolean	Pickup_Weapon (edict_t *ent, edict_t *other);
 void		Use_Weapon (edict_t *ent, gitem_t *inv);
 void		Drop_Weapon (edict_t *ent, gitem_t *inv);
 
-void Weapon_Blaster (edict_t *ent);
-void Weapon_Shotgun (edict_t *ent);
+void Weapon_Cerberus (edict_t *ent); //CR:Former Blaster
+void Weapon_Shotgun (edict_t *ent); //CR:Multishot shotgun
 void Weapon_SuperShotgun (edict_t *ent);
-void Weapon_Machinegun (edict_t *ent);
+void Weapon_Machinegun (edict_t *ent); //CR:Dueling Griffon
+void Weapon_Blast_Machinegun(edict_t *ent); //CR:Machinegun Variant
 void Weapon_Chaingun (edict_t *ent);
-void Weapon_HyperBlaster (edict_t *ent);
+void Weapon_HyperBlaster (edict_t *ent); //CR:Ultima Weapon
 void Weapon_RocketLauncher (edict_t *ent);
 void Weapon_Grenade (edict_t *ent);
 void Weapon_GrenadeLauncher (edict_t *ent);
-void Weapon_Railgun (edict_t *ent);
+void Weapon_Railgun (edict_t *ent); //CR:Velvet Hydra
+void Weapon_Death_Penalty(edict_t *ent); //CR:Railgun Variant
 void Weapon_BFG (edict_t *ent);
 
 gitem_armor_t jacketarmor_info	= { 25,  50, .30, .00, ARMOR_JACKET};
@@ -1289,16 +1291,16 @@ gitem_t	itemlist[] =
 always owned, never in the world
 */
 	{
-		"weapon_blaster", 
+		"weapon_cerberus", 
 		NULL,
 		Use_Weapon,
 		NULL,
-		Weapon_Blaster,
+		Weapon_Cerberus,
 		"misc/w_pkup.wav",
 		NULL, 0,
 		"models/weapons/v_blast/tris.md2",
 /* icon */		"w_blaster",
-/* pickup */	"Blaster",
+/* pickup */	"Cerberus",
 		0,
 		0,
 		NULL,
@@ -1367,7 +1369,7 @@ always owned, never in the world
 		"models/weapons/g_machn/tris.md2", EF_ROTATE,
 		"models/weapons/v_machn/tris.md2",
 /* icon */		"w_machinegun",
-/* pickup */	"Machinegun",
+/* pickup */	"Dueling Griffon",
 		0,
 		1,
 		"Bullets",
@@ -1376,6 +1378,29 @@ always owned, never in the world
 		NULL,
 		0,
 /* precache */ "weapons/machgf1b.wav weapons/machgf2b.wav weapons/machgf3b.wav weapons/machgf4b.wav weapons/machgf5b.wav"
+	},
+	
+	/*QUAKED weapon_blast_machinegun (.3 .3 1) (-16 -16 -16) (16 16 16)
+	*/
+	{
+		"weapon_blast_machinegun",
+		Pickup_Weapon,
+		Use_Weapon,
+		Drop_Weapon,
+		Weapon_Blast_Machinegun,
+		"misc/w_pkup.wav",
+		"models/weapons/g_machn/tris.md2", EF_ROTATE,
+		"models/weapons/v_machn/tris.md2",
+		/* icon */		"w_machinegun",
+		/* pickup */	"Blast Machinegun",
+		0,
+		1,
+		"Bullets",
+		IT_WEAPON | IT_STAY_COOP,
+		WEAP_MACHINEGUN,
+		NULL,
+		0,
+		/* precache */ "weapons/machgf1b.wav weapons/machgf2b.wav weapons/machgf3b.wav weapons/machgf4b.wav weapons/machgf5b.wav"
 	},
 
 /*QUAKED weapon_chaingun (.3 .3 1) (-16 -16 -16) (16 16 16)
@@ -1482,7 +1507,7 @@ always owned, never in the world
 		"models/weapons/g_hyperb/tris.md2", EF_ROTATE,
 		"models/weapons/v_hyperb/tris.md2",
 /* icon */		"w_hyperblaster",
-/* pickup */	"HyperBlaster",
+/* pickup */	"Ultima Weapon",
 		0,
 		1,
 		"Cells",
@@ -1505,7 +1530,7 @@ always owned, never in the world
 		"models/weapons/g_rail/tris.md2", EF_ROTATE,
 		"models/weapons/v_rail/tris.md2",
 /* icon */		"w_railgun",
-/* pickup */	"Railgun",
+/* pickup */	"Velvet Hydra",
 		0,
 		1,
 		"Slugs",
@@ -1514,6 +1539,29 @@ always owned, never in the world
 		NULL,
 		0,
 /* precache */ "weapons/rg_hum.wav"
+	},
+
+	/*QUAKED weapon_death_penalty (.3 .3 1) (-16 -16 -16) (16 16 16)
+	*/
+	{
+		"weapon_death_penalty",
+		Pickup_Weapon,
+		Use_Weapon,
+		Drop_Weapon,
+		Weapon_Death_Penalty,
+		"misc/w_pkup.wav",
+		"models/weapons/g_rail/tris.md2", EF_ROTATE,
+		"models/weapons/v_rail/tris.md2",
+		/* icon */		"w_railgun",
+		/* pickup */	"Death Penalty",
+		0,
+		1,
+		"Slugs",
+		IT_WEAPON | IT_STAY_COOP,
+		WEAP_RAILGUN,
+		NULL,
+		0,
+		/* precache */ "weapons/rg_hum.wav"
 	},
 
 /*QUAKED weapon_bfg (.3 .3 1) (-16 -16 -16) (16 16 16)

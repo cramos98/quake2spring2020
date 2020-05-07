@@ -1,0 +1,5 @@
+﻿  p_weapon.c
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\zatch\Documents\Github_Projects\Quake2_Source_DOCv3\game\.\..\release\game.dll) does not match the Linker's OutputFile property value (C:\Users\zatch\Documents\Github_Projects\Quake2_Source_DOCv3\release\gamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1188,5): warning MSB8012: TargetName(game) does not match the Linker's OutputFile property value (gamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
+  game.vcxproj -> C:\Users\zatch\Documents\Github_Projects\Quake2_Source_DOCv3\game\.\..\release\game.dll

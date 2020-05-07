@@ -1332,7 +1332,7 @@ void CL_AddBeams (void)
 //					b->start[2] = cl.refdef.vieworg[2];
 //				}
 
-//				Com_Printf ("Time:  %d %d %f\n", cl.time, cls.realtime, cls.frametime);
+//				Com_Printf ("Time:  %d %d %f\n", cl.time, cls.realtime, cls.FRAMETIME);
 */
 
 extern cvar_t *hand;
