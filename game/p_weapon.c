@@ -534,12 +534,12 @@ void Weapon_Generic (edict_t *ent, int FRAME_ACTIVATE_LAST, int FRAME_FIRE_LAST,
 /*
 ======================================================================
 
-GRENADE
+GRENADE (CR: Fire Materia Spell)
 
 ======================================================================
 */
 
-#define GRENADE_TIMER		2.0
+#define GRENADE_TIMER		1.0
 #define GRENADE_MINSPEED	400
 #define GRENADE_MAXSPEED	800
 
@@ -698,6 +698,8 @@ void Weapon_Grenade (edict_t *ent)
 	}
 }
 
+
+
 /*
 ======================================================================
 
@@ -764,9 +766,9 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 	float	damage_radius;
 	int		radius_damage;
 
-	damage = 100 + (int)(random() * 20.0);
-	radius_damage = 120;
-	damage_radius = 120;
+	damage = 50 + (int)(random() * 2.0);
+	radius_damage = 20;
+	damage_radius = 50;
 	if (is_quad)
 	{
 		damage *= 4;
@@ -780,7 +782,7 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 
 	VectorSet(offset, 8, 8, ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
-	fire_rocket (ent, start, forward, damage, 650, damage_radius, radius_damage);
+	fire_rocket (ent, start, forward, damage, 100, damage_radius, radius_damage);
 
 	// send muzzle flash
 	gi.WriteByte (svc_muzzleflash);
@@ -796,7 +798,7 @@ void Weapon_RocketLauncher_Fire (edict_t *ent)
 		ent->client->pers.inventory[ent->client->ammo_index]--;
 }
 
-void Weapon_RocketLauncher (edict_t *ent)
+void Weapon_Ice_Materia (edict_t *ent)
 {
 	static int	pause_frames[]	= {25, 33, 42, 50, 0};
 	static int	fire_frames[]	= {5, 0};

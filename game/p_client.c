@@ -606,7 +606,7 @@ but is called after each death and level change in deathmatch
 */
 void InitClientPersistant (gclient_t *client)
 {
-	gitem_t		*item, *item2, *item3, *item4, *item5, *item6, *item7;
+	gitem_t		*item, *item2, *item3, *item4, *item5, *item6, *item7, *item8, *item9, *item10, *item11;
 
 	memset (&client->pers, 0, sizeof(client->pers));
 
@@ -636,6 +636,22 @@ void InitClientPersistant (gclient_t *client)
 
 	item7 = FindItem("Death Penalty");
 	client->pers.selected_item = ITEM_INDEX(item7);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item8 = FindItem("Fire Materia");
+	client->pers.selected_item = ITEM_INDEX(item8);
+	client->pers.inventory[client->pers.selected_item] = 50;
+
+	item9 = FindItem("Ice Materia");
+	client->pers.selected_item = ITEM_INDEX(item9);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
+	item10 = FindItem("Health");
+	client->pers.selected_item = ITEM_INDEX(item10);
+	client->pers.inventory[client->pers.selected_item] = 10;
+
+	item11 = FindItem("Body Armor");
+	client->pers.selected_item = ITEM_INDEX(item11);
 	client->pers.inventory[client->pers.selected_item] = 1;
 
 	client->pers.weapon = item;

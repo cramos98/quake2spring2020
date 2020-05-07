@@ -33,6 +33,7 @@ void Weapon_Chaingun (edict_t *ent);
 void Weapon_HyperBlaster (edict_t *ent); //CR:Ultima Weapon
 void Weapon_RocketLauncher (edict_t *ent);
 void Weapon_Grenade (edict_t *ent);
+void Weapon_Ice_Materia(edict_t *ent);
 void Weapon_GrenadeLauncher (edict_t *ent);
 void Weapon_Railgun (edict_t *ent); //CR:Velvet Hydra
 void Weapon_Death_Penalty(edict_t *ent); //CR:Railgun Variant
@@ -1438,10 +1439,10 @@ always owned, never in the world
 		"models/items/ammo/grenades/medium/tris.md2", 0,
 		"models/weapons/v_handgr/tris.md2",
 /* icon */		"a_grenades",
-/* pickup */	"Grenades",
+/* pickup */	"Fire Materia",
 /* width */		3,
 		5,
-		"grenades",
+		"fire materia",
 		IT_AMMO|IT_WEAPON,
 		WEAP_GRENADES,
 		NULL,
@@ -1479,12 +1480,12 @@ always owned, never in the world
 		Pickup_Weapon,
 		Use_Weapon,
 		Drop_Weapon,
-		Weapon_RocketLauncher,
+		Weapon_Ice_Materia,
 		"misc/w_pkup.wav",
 		"models/weapons/g_rocket/tris.md2", EF_ROTATE,
 		"models/weapons/v_rocket/tris.md2",
 /* icon */		"w_rlauncher",
-/* pickup */	"Rocket Launcher",
+/* pickup */	"Ice Materia",
 		0,
 		1,
 		"Rockets",
