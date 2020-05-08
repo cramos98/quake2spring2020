@@ -15,17 +15,17 @@ the properties and at the end the " " section insert this: +set game q2doc +set 
 ----------------------------------------------
 Notable Key Bindings
 ----------------------------------------------
-0 - Death Penalty
-1 - Cerberus (Default Starting Weapon)
-3 - Blast Machinegun
-4 - Dueling Griffon
-8 - Ultima Weapon
-9 - Velvet Hydra
-i - Give ammo (for testing purposes)
-g - Fire Materia
-h - Ice Materia
-j - Cure Materia
-k - Barrier Materia
+- 0 - Death Penalty
+- 1 - Cerberus (Default Starting Weapon)
+- 3 - Blast Machinegun
+- 4 - Dueling Griffon
+- 8 - Ultima Weapon
+- 9 - Velvet Hydra
+- i - Give ammo (for testing purposes)
+- g - Fire Materia
+- h - Ice Materia
+- j - Cure Materia
+- k - Barrier Materia
 
 ----------------------------------------------
 Common Deliverables
