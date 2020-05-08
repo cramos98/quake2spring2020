@@ -1,21 +1,4 @@
-﻿  p_client.c
-p_client.c(46): warning C4127: conditional expression is constant
-p_client.c(70): warning C4100: 'self' : unreferenced formal parameter
-p_client.c(179): warning C4100: 'damage' : unreferenced formal parameter
-p_client.c(179): warning C4100: 'kick' : unreferenced formal parameter
-p_client.c(179): warning C4100: 'other' : unreferenced formal parameter
-p_client.c(179): warning C4100: 'self' : unreferenced formal parameter
-p_client.c(211): warning C4100: 'inflictor' : unreferenced formal parameter
-p_client.c(501): warning C4100: 'point' : unreferenced formal parameter
-p_client.c(886): warning C4127: conditional expression is constant
-p_client.c(971): warning C4100: 'point' : unreferenced formal parameter
-p_client.c(971): warning C4100: 'attacker' : unreferenced formal parameter
-p_client.c(971): warning C4100: 'inflictor' : unreferenced formal parameter
-p_client.c(1410): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-p_client.c(1415): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
-p_client.c(1455): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+﻿  p_weapon.c
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\zatch\Documents\Github_Projects\Quake2_Source_DOCv3\game\.\..\release\game.dll) does not match the Linker's OutputFile property value (C:\Users\zatch\Documents\Github_Projects\Quake2_Source_DOCv3\release\gamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1188,5): warning MSB8012: TargetName(game) does not match the Linker's OutputFile property value (gamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp

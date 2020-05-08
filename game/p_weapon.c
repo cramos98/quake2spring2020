@@ -1410,7 +1410,7 @@ void weapon_railgun_fire (edict_t *ent)
 	}
 	else
 	{
-		damage = 50;
+		damage = 30;
 		kick = 250;
 	}
 
@@ -1466,8 +1466,8 @@ void weapon_death_penalty_fire(edict_t *ent)
 	}
 	else
 	{
-		damage = 1000;
-		kick = 500;
+		damage = 5000;
+		kick = 800;
 	}
 
 	if (is_quad)
@@ -1504,7 +1504,7 @@ void Weapon_Death_Penalty(edict_t *ent)
 	static int	pause_frames[] = { 36, 0 };
 	static int	fire_frames[] = { 4, 0 };
 
-	Weapon_Generic(ent, 3, 18, 56, 61, pause_frames, fire_frames, weapon_railgun_fire);
+	Weapon_Generic(ent, 3, 18, 56, 61, pause_frames, fire_frames, weapon_death_penalty_fire);
 }
 
 
