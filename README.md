@@ -43,15 +43,15 @@ Common Deliverables
 Personal Deliverables
 ---------------------------------------------
 1. 3rd Person Mode
--Not Implemented (unable to figure out how to implement)
+- Not Implemented (unable to figure out how to implement)
 2. Dirge of Cerberus Weapon Replacements
--Blaster modified to shot three shots similar to the Cerberus Handgun in DoC
--Shotgun was modified to shot multiple shots in one click
--Machinegun modified to fire rapid fire blaster shots and renamed the Dueling Griffon and Machinegun variant in DoC
--A Second Machinegun variant was created in the form of the Blast Machinegun from DoC which has low damage but very high kick.
--Railgun modified to have lower damage to be similar to a bolt action rifle and renamed the Velvet Hydra, a rifle in DoC.
--A Second railgun variant is use for Vincent's most powerful weapon, Death Penalty which has incredibly high damage and kick.
--Hyperblaster modified to be the Ultima Weapon from DoC
+- Blaster modified to shot three shots similar to the Cerberus Handgun in DoC
+- Shotgun was modified to shot multiple shots in one click
+- Machinegun modified to fire rapid fire blaster shots and renamed the Dueling Griffon and Machinegun variant in DoC
+- A Second Machinegun variant was created in the form of the Blast Machinegun from DoC which has low damage but very high kick.
+- Railgun modified to have lower damage to be similar to a bolt action rifle and renamed the Velvet Hydra, a rifle in DoC.
+- A Second railgun variant is use for Vincent's most powerful weapon, Death Penalty which has incredibly high damage and kick.
+- Hyperblaster modified to be the Ultima Weapon from DoC
 3. 4 Materia Spells
 - Fire Materia    - Repurposed grenade and explosion timer to act as the fire spell
 - Ice Materia     - Repurposed Rocket Launcher for slow moving ice spell with big area of effect damage.
@@ -59,6 +59,6 @@ Personal Deliverables
 - Barrier Materia - Key binded command to grant armor to the player when pressed.
 4. 4 Monster Modes for Vincent
 - Not implemented (unable to figure out how to implement in time.)
--Plan was to implement Galian Beast for Beast Flare (area of effect fire damage to all enemies), Death Gigas for Gigadunk
+- Plan was to implement Galian Beast for Beast Flare (area of effect fire damage to all enemies), Death Gigas for Gigadunk
 (high physical damage to one enemy), Hellmasker for Nightmare (Inflict various status effects to one target), and Chaos
 for Satan Slam (Inflict Instant Death or deal 5.625 damage (for death immune enemies/bosses) to all enemies).
