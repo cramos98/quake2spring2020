@@ -33,7 +33,6 @@ Common Deliverables
 1. Separate your project into its own folder (not baseq2)
 2. A shortcut to auto launch your mod
 3. A README.md explaining your project and how to showcase your deliverables
-- This is the README.md
 4. UI Changes
 - Inventory lists the new names of weapons and spells
 - Slight changes to the help screen
@@ -61,4 +60,4 @@ Personal Deliverables
 - Not implemented (unable to figure out how to implement in time.)
 - Plan was to implement Galian Beast for Beast Flare (area of effect fire damage to all enemies), Death Gigas for Gigadunk
 (high physical damage to one enemy), Hellmasker for Nightmare (Inflict various status effects to one target), and Chaos
-for Satan Slam (Inflict Instant Death or deal 5.625 damage (for death immune enemies/bosses) to all enemies).
+for Satan Slam (Inflict Instant Death or deal 5.625x damage (for death immune enemies/bosses) to all enemies).
